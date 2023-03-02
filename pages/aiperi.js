@@ -3,6 +3,58 @@ import styles from "../styles/Home.module.css";
 import Navbar from "./components/navbar";
 
 export default function Aiperi() {
+  const html = `
+  <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Drawing app</title>
+
+</head>
+<body>
+    <section class="container">
+        <div id="toolbar">
+            <h1>Draw.</h1>
+            <label for="stroke">Stroke</label>
+            <input id="stroke" name='stroke' type="color">
+            <label for="lineWidth">Line Width</label>
+            <input id="lineWidth" name='lineWidth' type="number" value="5">
+            <button id="clear">Clear</button>
+        </div>
+        <div class="drawing-board">
+            <canvas id="drawing-board"></canvas>
+        </div>
+    </section>
+    <script src="./index_peri.js"></script>
+</body>
+<!--
+  <head>
+    <title>My Next.js Page</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="#"> <B> <font color="blue"> Home </font> </B>  </a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Hello, World!</h1>
+      <p>This is a sample Next.js page.</p>
+    </main>
+  </body>   -->
+</html>`;
   return (
     <div className={styles.container}>
       <Head>
@@ -11,9 +63,7 @@ export default function Aiperi() {
         <link rel="icon" href="/compsci 49 (1) 1.ico" />
       </Head>
       <Navbar />
-      <main className={styles.main}>
-        <h1 className={styles.title}>Peri&apos;s Page : &#41;</h1>
-      </main>
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );
 }
